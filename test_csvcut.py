@@ -16,3 +16,10 @@ def test_resolve_passthrough():
 def test_resolve_missing_column_raises():
     with pytest.raises(KeyError):
         csvcut.resolve(["a"], ["zzz"], [])
+
+
+def test_resolve_ignore_missing():
+    assert csvcut.resolve(["a"], ["a", "zzz"], [], ignore_missing=True) == ["a"]
+
+def test_split_list_trims():
+    assert csvcut.split_list(" a , b ,, c ") == ["a", "b", "c"]
