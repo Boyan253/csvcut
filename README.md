@@ -28,3 +28,10 @@ python csvcut.py users.csv -f id,email | python csv2json.py - --lines
 - `-f` and `-x` are mutually exclusive in practice; `-f` wins if both are given.
 - Rows missing a requested column emit an empty cell rather than failing.
 - The delimiter is used for both reading and writing, so `-d ';'` round-trips.
+
+## Tests
+
+```
+pip install pytest
+pytest
+```
