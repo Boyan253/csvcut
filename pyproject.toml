@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csvcut"
+version = "0.1.0"
+description = "Select, drop and reorder CSV columns by name instead of by index."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/Boyan253/csvcut"
+
+[project.scripts]
+csvcut = "csvcut:main"
+
+[tool.setuptools]
+py-modules = ["csvcut"]
