@@ -5,6 +5,8 @@ import argparse
 import csv
 import sys
 
+__version__ = "0.1.0"
+
 
 def resolve(fieldnames, wanted, drop, ignore_missing=False):
     """Work out the output column order."""
@@ -29,6 +31,8 @@ def split_list(value):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--version", action="version",
+                    version="%(prog)s " + __version__)
     ap.add_argument("csv_file", help="path to the CSV file, or - for stdin")
     ap.add_argument("-f", "--fields", help="comma separated columns to keep, in order")
     ap.add_argument("-x", "--exclude", help="comma separated columns to drop")
